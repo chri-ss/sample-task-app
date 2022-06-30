@@ -10,6 +10,7 @@ class App extends Component {
       task: {
         text: "",
         id: uniqid(),
+        rank: 1,
       },
       tasks: [],
     };
@@ -20,6 +21,7 @@ class App extends Component {
       task: {
         text: e.target.value,
         id: this.state.task.id,
+        rank: this.state.tasks.length + 1,
       },
     });
   };
@@ -31,6 +33,8 @@ class App extends Component {
       task: {
         text: "",
         id: uniqid(),
+        rank: this.state.tasks.length + 2,
+
       },
     });
   };
