@@ -34,8 +34,15 @@ class App extends Component {
         text: "",
         id: uniqid(),
         rank: this.state.tasks.length + 2,
-
       },
+    });
+  };
+
+  remove = (ident) => {
+    this.setState({
+      tasks: this.state.tasks.filter((el) => {
+        return el.id !== ident;
+      }),
     });
   };
 
@@ -54,7 +61,7 @@ class App extends Component {
           />
           <button type="submit">Add Task</button>
         </form>
-        <Overview tasks={tasks} />
+        <Overview tasks={tasks} remove={this.remove} />
       </div>
     );
   }
